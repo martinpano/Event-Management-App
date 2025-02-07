@@ -4,7 +4,11 @@ var cache = builder.AddRedis("cache")
     .WithDataVolume()
     .WithRedisCommander();
 
-var apiService = builder.AddProject<Projects.EventManager_ApiService>("apiservice")
+var userManagementService = builder.AddProject<Projects.EventManager_UserManagementService>("eventmanager-usermanagementservice")
+    .WithReference(cache)
+    .WaitFor(cache);
+builder.AddProject<Projects.EventManager_EventManagementService>("eventmanager-eventmanagementservice")
+    .WithExternalHttpEndpoints()
     .WithReference(cache)
     .WaitFor(cache);
 
@@ -12,7 +16,8 @@ builder.AddProject<Projects.EventManager_Web>("webfrontend")
     .WithExternalHttpEndpoints()
     .WithReference(cache)
     .WaitFor(cache)
-    .WithReference(apiService)
-    .WaitFor(apiService);
+    .WithReference(userManagementService)
+    .WaitFor(userManagementService);
+
 
 builder.Build().Run();
