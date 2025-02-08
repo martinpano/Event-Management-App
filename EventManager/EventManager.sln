@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventManager.Db", "EventMan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventManager.DbManager", "EventManager.DbManager\EventManager.DbManager.csproj", "{24D5A6C0-F667-4A32-8DE0-4EBE544FEA5B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventManager.BookingService", "EventManager.BookingService\EventManager.BookingService.csproj", "{354D16ED-2079-4E9C-AB13-C3E83D41D8EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,6 +62,10 @@ Global
 		{24D5A6C0-F667-4A32-8DE0-4EBE544FEA5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24D5A6C0-F667-4A32-8DE0-4EBE544FEA5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24D5A6C0-F667-4A32-8DE0-4EBE544FEA5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{354D16ED-2079-4E9C-AB13-C3E83D41D8EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{354D16ED-2079-4E9C-AB13-C3E83D41D8EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{354D16ED-2079-4E9C-AB13-C3E83D41D8EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{354D16ED-2079-4E9C-AB13-C3E83D41D8EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,5 +79,6 @@ Global
 		{A716C9CE-22B2-48AE-9C61-62EF33F12E63} = {C8CCD0F5-7677-4D12-A247-13F007A6C538}
 		{79F15B67-9CE3-421D-901E-E747C75E8AA0} = {C8CCD0F5-7677-4D12-A247-13F007A6C538}
 		{24D5A6C0-F667-4A32-8DE0-4EBE544FEA5B} = {C8CCD0F5-7677-4D12-A247-13F007A6C538}
+		{354D16ED-2079-4E9C-AB13-C3E83D41D8EF} = {C8CCD0F5-7677-4D12-A247-13F007A6C538}
 	EndGlobalSection
 EndGlobal

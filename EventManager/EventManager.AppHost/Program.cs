@@ -32,12 +32,21 @@ builder.AddProject<Projects.EventManager_EventManagementService>("eventmanager-e
     .WithReference(cache)
     .WaitFor(cache);
 
+
+var bookingService = builder.AddProject<Projects.EventManager_BookingService>("eventmanager-bookingservice")
+    .WithReference(cache)
+    .WaitFor(cache);
+
+
 builder.AddProject<Projects.EventManager_Web>("webfrontend")
     .WithExternalHttpEndpoints()
     .WithReference(cache)
     .WaitFor(cache)
     .WithReference(userManagementService)
     .WaitFor(userManagementService);
+
+
+builder.AddProject<Projects.EventManager_BookingService>("eventmanager-bookingservice");
 
 
 builder.Build().Run();
