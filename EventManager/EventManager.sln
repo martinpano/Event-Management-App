@@ -18,6 +18,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5823ADDD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventManager.EventManagementService", "EventManager.EventManagementService\EventManager.EventManagementService.csproj", "{A716C9CE-22B2-48AE-9C61-62EF33F12E63}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventManager.Db", "EventManager.EventManagerDb\EventManager.Db.csproj", "{79F15B67-9CE3-421D-901E-E747C75E8AA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventManager.DbManager", "EventManager.DbManagerr\EventManager.DbManager.csproj", "{8D3C4F74-10E7-4FEB-9632-AC23111891E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +52,14 @@ Global
 		{A716C9CE-22B2-48AE-9C61-62EF33F12E63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A716C9CE-22B2-48AE-9C61-62EF33F12E63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A716C9CE-22B2-48AE-9C61-62EF33F12E63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79F15B67-9CE3-421D-901E-E747C75E8AA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79F15B67-9CE3-421D-901E-E747C75E8AA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79F15B67-9CE3-421D-901E-E747C75E8AA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79F15B67-9CE3-421D-901E-E747C75E8AA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D3C4F74-10E7-4FEB-9632-AC23111891E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D3C4F74-10E7-4FEB-9632-AC23111891E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D3C4F74-10E7-4FEB-9632-AC23111891E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D3C4F74-10E7-4FEB-9632-AC23111891E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,5 +71,7 @@ Global
 		{5B793BF6-EF7F-4075-B50B-DB97B9B4DD72} = {C8CCD0F5-7677-4D12-A247-13F007A6C538}
 		{C91198F0-6C81-4B88-B820-837E2825CB3F} = {5823ADDD-C5B8-4805-BF9C-2BDD1FCAF04C}
 		{A716C9CE-22B2-48AE-9C61-62EF33F12E63} = {C8CCD0F5-7677-4D12-A247-13F007A6C538}
+		{79F15B67-9CE3-421D-901E-E747C75E8AA0} = {C8CCD0F5-7677-4D12-A247-13F007A6C538}
+		{8D3C4F74-10E7-4FEB-9632-AC23111891E5} = {C8CCD0F5-7677-4D12-A247-13F007A6C538}
 	EndGlobalSection
 EndGlobal

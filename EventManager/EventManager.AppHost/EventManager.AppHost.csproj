@@ -13,13 +13,19 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EventManager.ApiService\EventManager.UserManagementService.csproj" />
+    <ProjectReference Include="..\EventManager.DbManagerr\EventManager.DbManager.csproj" />
     <ProjectReference Include="..\EventManager.EventManagementService\EventManager.EventManagementService.csproj" />
     <ProjectReference Include="..\EventManager.Web\EventManager.Web.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Aspire.Hosting.AppHost" Version="9.0.0" />
+    <PackageReference Include="Aspire.Hosting.PostgreSQL" Version="9.0.0" />
     <PackageReference Include="Aspire.Hosting.Redis" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>

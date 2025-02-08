@@ -1,0 +1,6 @@
+@EventManager.DbManagerr_HostAddress = http://localhost:5197
+
+GET {{EventManager.DbManagerr_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
