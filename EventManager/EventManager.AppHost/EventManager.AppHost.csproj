@@ -12,10 +12,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EventManager.ApiService\EventManager.UserManagementService.csproj" />
-    <ProjectReference Include="..\EventManager.BookingService\EventManager.BookingService.csproj" />
+    <ProjectReference Include="..\BookingManager.Api\BookingManager.Api.csproj" />
+    <ProjectReference Include="..\CartManager.Service\CartManager.Service.csproj" />
+    <ProjectReference Include="..\EventManager.ApiService\UserManagement.Api.csproj" />
     <ProjectReference Include="..\EventManager.DbManager\EventManager.DbManager.csproj" />
-    <ProjectReference Include="..\EventManager.EventManagementService\EventManager.EventManagementService.csproj" />
+    <ProjectReference Include="..\EventManager.EventManagementService\EventManager.Api.csproj" />
     <ProjectReference Include="..\EventManager.Web\EventManager.Web.csproj" />
   </ItemGroup>
 

@@ -23,17 +23,20 @@ var eventDbManager = builder.AddProject<Projects.EventManager_DbManager>("eventm
     //.WithHttpHealthCheck("/health")
     //.WithHttpsCommand("/reset-db", "Reset Database", iconName: "DatabaseLightning");
 
-var userManagementService = builder.AddProject<Projects.EventManager_UserManagementService>("eventmanager-usermanagementservice")
+var userManagementService = builder.AddProject<Projects.UserManagement_Api>("user-api")
     .WithReference(cache)
     .WaitFor(cache);
 
-builder.AddProject<Projects.EventManager_EventManagementService>("eventmanager-eventmanagementservice")
+var eventManagementService = builder.AddProject<Projects.EventManager_Api>("event-api")
     .WithExternalHttpEndpoints()
     .WithReference(cache)
     .WaitFor(cache);
 
 
-var bookingService = builder.AddProject<Projects.EventManager_BookingService>("eventmanager-bookingservice")
+var bookingManagementService = builder.AddProject<Projects.BookingManager_Api>("bookingmanager-api");
+
+
+var cartService = builder.AddProject<Projects.CartManager_Service>("cartmanager-service")
     .WithReference(cache)
     .WaitFor(cache);
 
@@ -43,10 +46,12 @@ builder.AddProject<Projects.EventManager_Web>("webfrontend")
     .WithReference(cache)
     .WaitFor(cache)
     .WithReference(userManagementService)
-    .WaitFor(userManagementService);
+    .WaitFor(userManagementService)
+    .WithReference(eventManagementService)
+    .WaitFor(eventManagementService)
+    .WithReference(bookingManagementService)
+    .WaitFor(bookingManagementService);
 
-
-builder.AddProject<Projects.EventManager_BookingService>("eventmanager-bookingservice");
 
 
 builder.Build().Run();

@@ -26,12 +26,6 @@ namespace EventManager.Db
                 .HasForeignKey(b => b.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // Event-Booking Relationship
-            modelBuilder.Entity<Booking>()
-                .HasOne(b => b.Event)
-                .WithMany(e => e.Bookings)
-                .HasForeignKey(b => b.EventId)
-                .OnDelete(DeleteBehavior.Cascade);
 
             // CartItem Relationship
             //modelBuilder.Entity<CartItem>()
