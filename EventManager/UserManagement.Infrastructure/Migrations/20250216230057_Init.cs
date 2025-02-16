@@ -9,7 +9,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace UserManagement.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class Init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -87,8 +87,8 @@ namespace UserManagement.Infrastructure.Migrations
                 columns: new[] { "Id", "City", "CreatedBy", "CreatedOn", "Email", "FirstName", "LastName", "PasswordHash" },
                 values: new object[,]
                 {
-                    { 1, "New York", 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@example.com", "Admin", "User", "AQAAAAIAAYagAAAAEDTgBsBrwslzeCOCl/I63qOx+gDefqj8mmyz2OdokQsJJzNi9AF4rVKqHolNfG1uxw==" },
-                    { 2, "Los Angeles", 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "testuser@example.com", "Test", "User", "AQAAAAIAAYagAAAAELx80KCIJaZc75kjV5FEnaOCKi1prkdUc8Qv18+UcB4esRuCzjr22k8U/yK4IAuzoQ==" }
+                    { 1, "New York", 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@example.com", "Admin", "User", "AQAAAAIAAYagAAAAEJ/qN3Z0vmGQqLlAtbpvaJKYtxuezhFHOXHf8Ga1rffHAIvS0EOAdXQ/XryTIR2J0g==" },
+                    { 2, "Los Angeles", 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "testuser@example.com", "Test", "User", "AQAAAAIAAYagAAAAEE5uOidl8ku2IQFkktpun2EwAF4zsRQYHmaklVYLXroPrmWgpWR/7D7es789a70ttA==" }
                 });
 
             migrationBuilder.InsertData(

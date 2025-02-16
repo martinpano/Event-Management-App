@@ -12,8 +12,8 @@ using UserManagement.Infrastructure.Data;
 namespace UserManagement.Infrastructure.Migrations
 {
     [DbContext(typeof(UserManagementDbContext))]
-    [Migration("20250216215257_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20250216230057_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -121,7 +121,7 @@ namespace UserManagement.Infrastructure.Migrations
                             Email = "admin@example.com",
                             FirstName = "Admin",
                             LastName = "User",
-                            PasswordHash = "AQAAAAIAAYagAAAAEDTgBsBrwslzeCOCl/I63qOx+gDefqj8mmyz2OdokQsJJzNi9AF4rVKqHolNfG1uxw=="
+                            PasswordHash = "AQAAAAIAAYagAAAAEJ/qN3Z0vmGQqLlAtbpvaJKYtxuezhFHOXHf8Ga1rffHAIvS0EOAdXQ/XryTIR2J0g=="
                         },
                         new
                         {
@@ -132,7 +132,7 @@ namespace UserManagement.Infrastructure.Migrations
                             Email = "testuser@example.com",
                             FirstName = "Test",
                             LastName = "User",
-                            PasswordHash = "AQAAAAIAAYagAAAAELx80KCIJaZc75kjV5FEnaOCKi1prkdUc8Qv18+UcB4esRuCzjr22k8U/yK4IAuzoQ=="
+                            PasswordHash = "AQAAAAIAAYagAAAAEE5uOidl8ku2IQFkktpun2EwAF4zsRQYHmaklVYLXroPrmWgpWR/7D7es789a70ttA=="
                         });
                 });
 

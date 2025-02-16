@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -21,7 +23,26 @@ namespace UserManagement.Infrastructure.Data
             var dbContext = scope.ServiceProvider.GetRequiredService<UserManagementDbContext>();
 
             using var activity = _activitySource.StartActivity("Initializing catalog database", ActivityKind.Client);
+
+            await EnsureDatabaseAsync(dbContext, cancellationToken);
+
             await InitializeDatabaseAsync(dbContext, cancellationToken);
+        }
+
+        private static async Task EnsureDatabaseAsync(UserManagementDbContext dbContext, CancellationToken cancellationToken)
+        {
+            var dbCreator = dbContext.GetService<IRelationalDatabaseCreator>();
+
+            var strategy = dbContext.Database.CreateExecutionStrategy();
+            await strategy.ExecuteAsync(async () =>
+            {
+                // Create the database if it does not exist.
+                // Do this first so there is then a database to start a transaction against.
+                if (!await dbCreator.ExistsAsync(cancellationToken))
+                {
+                    await dbCreator.CreateAsync(cancellationToken);
+                }
+            });
         }
 
         public async Task InitializeDatabaseAsync(UserManagementDbContext dbContext, CancellationToken cancellationToken = default)
@@ -29,6 +50,7 @@ namespace UserManagement.Infrastructure.Data
             var sw = Stopwatch.StartNew();
 
             var strategy = dbContext.Database.CreateExecutionStrategy();
+
             await strategy.ExecuteAsync(dbContext.Database.MigrateAsync, cancellationToken);
 
             await SeedAsync(dbContext, cancellationToken);

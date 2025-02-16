@@ -8,14 +8,13 @@ namespace UserManagement.Infrastructure.Data
     {
         public static List<User> SeedUsers()
         {
-            var hasher = new PasswordHasher<User>();
             return
             [
                 new()
                 {
                     Id = 1,
                     Email = "admin@example.com",
-                    PasswordHash = hasher.HashPassword(null, "Admin@123"), // ❌ Will not work in migrations
+                    PasswordHash = "AQAAAAIAAYagAAAAEJ/qN3Z0vmGQqLlAtbpvaJKYtxuezhFHOXHf8Ga1rffHAIvS0EOAdXQ/XryTIR2J0g==",
                     FirstName = "Admin",
                     LastName = "User",
                     City = "New York"
@@ -24,7 +23,7 @@ namespace UserManagement.Infrastructure.Data
                 {
                     Id = 2,
                     Email = "testuser@example.com",
-                    PasswordHash = hasher.HashPassword(null, "User@123"), // ❌ Will not work in migrations
+                    PasswordHash = "AQAAAAIAAYagAAAAEE5uOidl8ku2IQFkktpun2EwAF4zsRQYHmaklVYLXroPrmWgpWR/7D7es789a70ttA==",
                     FirstName = "Test",
                     LastName = "User",
                     City = "Los Angeles"
