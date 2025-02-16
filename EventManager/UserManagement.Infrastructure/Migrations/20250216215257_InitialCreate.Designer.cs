@@ -12,8 +12,8 @@ using UserManagement.Infrastructure.Data;
 namespace UserManagement.Infrastructure.Migrations
 {
     [DbContext(typeof(UserManagementDbContext))]
-    [Migration("20250216023914_Init")]
-    partial class Init
+    [Migration("20250216215257_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -50,6 +50,24 @@ namespace UserManagement.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Role", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Admin role with all the privileges.",
+                            Name = "Admin"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "User role with regular privileges.",
+                            Name = "User"
+                        });
                 });
 
             modelBuilder.Entity("UserManagement.Core.Entities.User", b =>
@@ -92,6 +110,30 @@ namespace UserManagement.Infrastructure.Migrations
                         .IsUnique();
 
                     b.ToTable("Users", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            City = "New York",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "admin@example.com",
+                            FirstName = "Admin",
+                            LastName = "User",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDTgBsBrwslzeCOCl/I63qOx+gDefqj8mmyz2OdokQsJJzNi9AF4rVKqHolNfG1uxw=="
+                        },
+                        new
+                        {
+                            Id = 2,
+                            City = "Los Angeles",
+                            CreatedBy = 0,
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "testuser@example.com",
+                            FirstName = "Test",
+                            LastName = "User",
+                            PasswordHash = "AQAAAAIAAYagAAAAELx80KCIJaZc75kjV5FEnaOCKi1prkdUc8Qv18+UcB4esRuCzjr22k8U/yK4IAuzoQ=="
+                        });
                 });
 
             modelBuilder.Entity("UserManagement.Core.Entities.UserRole", b =>
@@ -107,6 +149,18 @@ namespace UserManagement.Infrastructure.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("UserRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = 1,
+                            RoleId = 1
+                        },
+                        new
+                        {
+                            UserId = 2,
+                            RoleId = 2
+                        });
                 });
 
             modelBuilder.Entity("UserManagement.Core.Entities.UserRole", b =>

@@ -17,9 +17,9 @@ namespace UserManagement.Infrastructure.Data
             modelBuilder.ApplyConfiguration(new UserRoleEntityTypeConfiguration());
 
             modelBuilder.Entity<User>()
-                .HasData(UserSeedData.SeedUsers());
+                .HasData(SeedData.SeedUsers());
             modelBuilder.Entity<Role>()
-                .HasData(RoleSeedData.SeedRoles());
+                .HasData(SeedData.SeedRoles());
             modelBuilder.Entity<UserRole>().HasData(
                 new UserRole { UserId = 1, RoleId = 1 },
                 new UserRole { UserId = 2, RoleId = 2 }

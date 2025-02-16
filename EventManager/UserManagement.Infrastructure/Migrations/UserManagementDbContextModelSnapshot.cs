@@ -118,7 +118,7 @@ namespace UserManagement.Infrastructure.Migrations
                             Email = "admin@example.com",
                             FirstName = "Admin",
                             LastName = "User",
-                            PasswordHash = "AQAAAAIAAYagAAAAELQ2q3eCz0Hh1Y8NJnJ7CXGq+ky9zb7IY9v0yzTWCyVqsxziqDv1b7a4OFxlqrKUfw=="
+                            PasswordHash = "AQAAAAIAAYagAAAAEDTgBsBrwslzeCOCl/I63qOx+gDefqj8mmyz2OdokQsJJzNi9AF4rVKqHolNfG1uxw=="
                         },
                         new
                         {
@@ -129,7 +129,7 @@ namespace UserManagement.Infrastructure.Migrations
                             Email = "testuser@example.com",
                             FirstName = "Test",
                             LastName = "User",
-                            PasswordHash = "AQAAAAIAAYagAAAAEKUsKxbz3CsPOd5uignXo/7SiaSCGQmNSJzK2SSIQiCD5dz4GY9Ny+0mvhMyTyy28g=="
+                            PasswordHash = "AQAAAAIAAYagAAAAELx80KCIJaZc75kjV5FEnaOCKi1prkdUc8Qv18+UcB4esRuCzjr22k8U/yK4IAuzoQ=="
                         });
                 });
 

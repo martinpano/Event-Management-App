@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Npgsql;
 using System.Text;
 using UserManagement.Infrastructure.Data;
 
@@ -18,7 +19,14 @@ builder.AddNpgsqlDbContext<UserManagementDbContext>("userdb", null,
     optionsBuilder => optionsBuilder.UseNpgsql(npgsqlBuilder =>
         npgsqlBuilder.MigrationsAssembly("UserManagement.Infrastructure")));
 
+//builder.Services.AddDbContext<UserManagementDbContext>(options =>
+//    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"), npgsqlOptions =>
+//    {
+//        npgsqlOptions.MigrationsAssembly("UserManagement.Infrastructure");
+//    }));
 
+builder.Services.AddSingleton<UserDbInitializer>();
+builder.Services.AddHostedService(sp => sp.GetRequiredService<UserDbInitializer>());
 
 var jwtSettings = builder.Configuration.GetSection("Jwt");
 var key = Encoding.UTF8.GetBytes(jwtSettings["Key"]);
@@ -44,13 +52,6 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddAuthorization();
 var app = builder.Build();
 
-using (var scope = app.Services.CreateScope())
-{
-    var dbContext = scope.ServiceProvider.GetRequiredService<UserManagementDbContext>();
-    dbContext.Database.Migrate(); // Applies pending migrations
-}
-
-//TODO: HERE IT FAILS. FIND A WAY TO RUN MIGRATIONS ASYNC
 
 if (app.Environment.IsDevelopment())
 {
@@ -61,6 +62,15 @@ else {
     app.UseExceptionHandler();
 }
 
+if (app.Environment.IsDevelopment())
+{
+    app.MapPost("/reset-db", async (UserManagementDbContext dbContext, UserDbInitializer dbInitializer, CancellationToken cancellationToken) =>
+    {
+        // Delete and recreate the database. This is useful for development scenarios to reset the database to its initial state.
+        await dbContext.Database.EnsureDeletedAsync(cancellationToken);
+        await dbInitializer.InitializeDatabaseAsync(dbContext, cancellationToken);
+    });
+}
 
 
 

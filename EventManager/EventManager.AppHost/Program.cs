@@ -17,9 +17,9 @@ var cache = builder.AddRedis("cache")
     .WithDataVolume()
     .WithRedisCommander();
 
-var eventDbManager = builder.AddProject<Projects.EventManager_DbManager>("eventmanager-eventdbmanager")
-    .WithReference(eventDb)
-    .WaitFor(eventDb);
+//var eventDbManager = builder.AddProject<Projects.EventManager_DbManager>("eventmanager-eventdbmanager")
+//    .WithReference(eventDb)
+//    .WaitFor(eventDb);
     //.WithHttpHealthCheck("/health")
     //.WithHttpsCommand("/reset-db", "Reset Database", iconName: "DatabaseLightning");
 

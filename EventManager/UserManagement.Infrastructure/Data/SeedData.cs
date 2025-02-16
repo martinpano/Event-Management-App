@@ -4,7 +4,7 @@ using UserManagement.Core.Entities;
 
 namespace UserManagement.Infrastructure.Data
 {
-    public static class UserSeedData
+    public static class SeedData
     {
         public static List<User> SeedUsers()
         {
@@ -29,6 +29,15 @@ namespace UserManagement.Infrastructure.Data
                     LastName = "User",
                     City = "Los Angeles"
                 }
+            ];
+        }
+
+        public static List<Role> SeedRoles()
+        {
+            return
+            [
+                new() { Id = 1, Name = "Admin", Description = "Admin role with all the privileges." },
+                new() { Id = 2, Name = "User", Description = "User role with regular privileges."}
             ];
         }
     }
