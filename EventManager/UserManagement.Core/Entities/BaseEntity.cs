@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EventManager.Db
+namespace UserManagement.Core.Entities
 {
     public class BaseEntity
     {

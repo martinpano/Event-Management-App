@@ -11,7 +11,7 @@ if (builder.ExecutionContext.IsRunMode)
 }
 
 var eventDb = postgres.AddDatabase("eventDb");
-
+var userDb = postgres.AddDatabase("userdb");
 
 var cache = builder.AddRedis("cache")
     .WithDataVolume()
@@ -24,6 +24,8 @@ var eventDbManager = builder.AddProject<Projects.EventManager_DbManager>("eventm
     //.WithHttpsCommand("/reset-db", "Reset Database", iconName: "DatabaseLightning");
 
 var userManagementService = builder.AddProject<Projects.UserManagement_Api>("user-api")
+    .WithReference(userDb)
+    .WaitFor(userDb)
     .WithReference(cache)
     .WaitFor(cache);
 

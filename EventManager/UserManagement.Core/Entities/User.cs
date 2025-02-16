@@ -1,10 +1,12 @@
 ﻿namespace UserManagement.Core.Entities
 {
-    public class User
+    public class User : BaseEntity
     {
-        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string City { get; set; }
         public string Email { get; set; }
         public string PasswordHash { get; set; }
-        public string Role { get; set; }  // e.g., "Admin", "User"
+        public ICollection<UserRole> UserRoles { get; set; }  // e.g., "Admin", "User"
     }
 }

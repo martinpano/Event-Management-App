@@ -6,7 +6,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventManager.AppHost", "Eve
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventManager.ServiceDefaults", "EventManager.ServiceDefaults\EventManager.ServiceDefaults.csproj", "{EA05221D-91E5-425F-A616-B111F9C5028B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserManagement.Api", "EventManager.ApiService\UserManagement.Api.csproj", "{F6901E47-D644-4278-B0E9-34C5A67F4D72}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserManagement.Api", "UserManagement.Api\UserManagement.Api.csproj", "{F6901E47-D644-4278-B0E9-34C5A67F4D72}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventManager.Web", "EventManager.Web\EventManager.Web.csproj", "{5B793BF6-EF7F-4075-B50B-DB97B9B4DD72}"
 EndProject
@@ -16,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C8CCD0F5-767
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5823ADDD-C5B8-4805-BF9C-2BDD1FCAF04C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventManager.Api", "EventManager.EventManagementService\EventManager.Api.csproj", "{A716C9CE-22B2-48AE-9C61-62EF33F12E63}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventManager.Api", "EventManager.Api\EventManager.Api.csproj", "{A716C9CE-22B2-48AE-9C61-62EF33F12E63}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventManager.Db", "EventManager.EventManagerDb\EventManager.Db.csproj", "{79F15B67-9CE3-421D-901E-E747C75E8AA0}"
 EndProject
